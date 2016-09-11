@@ -5,17 +5,16 @@ var questions = require('./questions');
 
 app.use(express.static('./build'));
 app.use('*', function(req,res){
-    res.sendFile(path.join(__dirname, '..', 'build', 'index.html')); //__dirname global variabel i node.js 
+    res.sendFile(path.join(__dirname, '..', 'build', 'index.html')); //__dirname global variable in node.js 
 })
 
 var server = app.listen(3000);
 var io = require('socket.io').listen(server);
 
-var connections = []; //array för att hålla antalet anslutningar
-var audienceArr = []; //array för att hålla alla användare
-//var questionsArr = [];
+var connections = []; 
+var audienceArr = []; 
 var title = 'Untitled presentation';
-var speaker = {}; //här läggs talaren till.
+var speaker = {}; 
 var currentQuestion = null; 
 var results = {
     a: 0
@@ -24,8 +23,11 @@ var results = {
     ,d:0
 };
 
-/* håller koll på antalet anslutningar till sidan */
-io.sockets.on('connection', function (socket) { //'connection' & 'disconnect' är automatiska event som triggas av socket.io när någon ansluter/eller tar bort anslutningen
+/**
+ * Keeping track of number of connections to the page
+ * Connection & disconnect automatic events triggered by socket.io when someone connects or disconnects.
+ */
+io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', () => { //anropas när någon disconnectar
         connections.splice(connections.indexOf(socket), 1) //kollar vart i arrayen indexet ligger och plockar bort det. 1 --> betyder att det är ett element i arrayen som ska tas bort

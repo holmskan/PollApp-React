@@ -27,7 +27,7 @@ var Audience = React.createClass({
                         <JoinForm emit={this.props.emit} />
                     </Display>
                     
-                    <h2>Audience-sida {this.props.status}</h2>
+                    
                 </Display>
             </article>
         )

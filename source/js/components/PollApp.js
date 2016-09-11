@@ -104,7 +104,7 @@ var PollApp = React.createClass({
             ,answer:this.answer
         }, this.state);
         return (
-            <div>
+            <div className="wrapper">
                 <Header title={this.state.title}
                 status={this.state.status} 
                 speaker={this.state.speaker} />

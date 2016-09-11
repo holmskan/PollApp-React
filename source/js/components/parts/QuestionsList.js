@@ -20,7 +20,7 @@ var QuestionsList = React.createClass({
             )
         })
         return (
-            <section>
+            <section className="questionList">
                 <h2>Frågor: ({this.props.questions.length}) </h2>
                 <ul>
                     {questions}

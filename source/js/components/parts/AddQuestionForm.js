@@ -3,7 +3,7 @@ var React = require('react');
 var AddQuestionForm = React.createClass({
     render: function() {
         return (
-            <form ref="questionForm" action="javascript:void(0)" onSubmit={this.questionAdded}>
+            <form ref="questionForm" className="questionForm" action="javascript:void(0)" onSubmit={this.questionAdded}>
                 <label className="block">Skriv fråga (obligatoriskt)</label>
                 <input className="block" type="text" placeholder="Skriv din fråga här" ref="questionInput" required />
                 <label className="block">Svarsalternativ a (obligatoriskt)</label>
@@ -14,7 +14,7 @@ var AddQuestionForm = React.createClass({
                 <input className="block" type="text" placeholder="Skriv svarsalternativ c här" ref="answerCInput" />
                 <label className="block">Svarsalternativ d</label>
                 <input className="block" type="text" placeholder="Skriv svarsalternativ d här" ref="answerDInput" />
-                <button className="block" className="btn btn-primary">Lägg till fråga</button>
+                <button className="addQuestionBtn">Lägg till fråga</button>
             </form>
         )
     }
