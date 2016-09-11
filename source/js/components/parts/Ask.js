@@ -3,7 +3,7 @@ var React = require('react');
 var Ask = React.createClass({
     
     answer:function(optionName) {
-        this.props.answer(optionName); //inom '' meddelandet som vi ska lyssna på på serversidan
+        this.props.answer(optionName); 
     }
     ,render: function () {
         var options = Object.keys(this.props.question); 
@@ -18,9 +18,6 @@ var Ask = React.createClass({
         })
         console.log(options.join('\n'));
 
-        /**
-         * Eftersom jag döpte egenskapen i Audience.js till question så är det question som jag ska ropa på i h3:an här
-         */
         return (
             <section>
                 <h3>{this.props.question.q}</h3>

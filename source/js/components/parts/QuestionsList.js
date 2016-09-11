@@ -1,9 +1,3 @@
-/* Skapa en komponent som heter QuestionList som på speakersidan bara visar upp alla frågorna. På samma sätt som vi visade upp alla i 
-Audience.
-Skicka med frågorna och visa upp.
-Skapa fler frågor i questionsfilen.
-*/
-
 var React = require('react');
 
 var QuestionsList = React.createClass({
